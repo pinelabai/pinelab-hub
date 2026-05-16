@@ -37,8 +37,15 @@ type Tool = {
   appUrl: string;        // e.g. https://geo.pinelab.ai
   articleUrl: string | null;  // Substack URL or null
   githubUrl: string;     // GitHub repo URL
+  videoUrl: string | null;   // Embed URL (youtube.com/embed/ID or loom.com/embed/ID) or null
 };
 ```
+
+## Video embeds
+- Videos are optional per tool via `videoUrl`. Pass `null` if no video exists yet.
+- Use embed URLs, not page URLs (e.g., `youtube.com/embed/ID` not `youtube.com/watch?v=ID`).
+- The Demos section auto-hides when no tools have videos.
+- VideoEmbed component lives in `components/video-embed.tsx`.
 
 ## Deployment
 - Build command: `next build`
@@ -54,3 +61,21 @@ Sub-app repos:
 - pinelab-geo (geo.pinelab.ai)
 - pinelab-sitebuilder (builder.pinelab.ai)
 - pinelab-slackqa (qa.pinelab.ai)
+
+## Skill routing
+
+When the user's request matches an available skill, invoke it via the Skill tool. When in doubt, invoke the skill.
+
+Key routing rules:
+- Product ideas/brainstorming → invoke /office-hours
+- Strategy/scope → invoke /plan-ceo-review
+- Architecture → invoke /plan-eng-review
+- Design system/plan review → invoke /design-consultation or /plan-design-review
+- Full review pipeline → invoke /autoplan
+- Bugs/errors → invoke /investigate
+- QA/testing site behavior → invoke /qa or /qa-only
+- Code review/diff check → invoke /review
+- Visual polish → invoke /design-review
+- Ship/deploy/PR → invoke /ship or /land-and-deploy
+- Save progress → invoke /context-save
+- Resume context → invoke /context-restore

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Serif_Display, DM_Mono } from "next/font/google";
+import { GridBackground } from "@/components/grid-background";
 import "./globals.css";
 
 const dmSerif = DM_Serif_Display({
@@ -30,15 +31,16 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${dmSerif.variable} ${dmMono.variable}`}>
       <body className="min-h-screen overflow-x-hidden font-mono text-sm leading-relaxed">
+        <GridBackground />
         {/* Nav */}
         <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-10 py-5 bg-gradient-to-b from-[var(--background)] via-[var(--background)] to-transparent max-md:px-6 max-md:py-4">
           <a
             href="/"
-            className="font-serif text-lg text-foreground no-underline tracking-tight"
+            className="font-mono text-lg text-foreground no-underline tracking-tight"
           >
-            Pine<span className="text-pine">Lab</span>
+            Pine<span className="text-pine font-medium">Lab</span>
           </a>
-          <div className="hidden md:flex items-center gap-8">
+          <div className="flex items-center gap-4 md:gap-8">
             <a
               href="#tools"
               className="text-muted-foreground no-underline text-xs uppercase tracking-widest hover:text-foreground transition-colors"
