@@ -13,14 +13,14 @@
   --font-heading: var(--font-dm-serif);
 
   /* Pine Lab palette */
-  --color-pine: #3d6b4f;
-  --color-pine-soft: #2e5040;
-  --color-pine-glow: rgba(61, 107, 79, 0.15);
-  --color-gold: #c8b87a;
-  --color-surface: #141413;
-  --color-border-custom: #232320;
-  --color-muted-custom: #6b6a65;
-  --color-text: #e8e6e1;
+  --color-pine: #4a8c65;
+  --color-pine-soft: #3d7555;
+  --color-pine-glow: rgba(61, 107, 79, 0.12);
+  --color-gold: #a89340;
+  --color-surface: #f5f2ec;
+  --color-border-custom: #ddd8ce;
+  --color-muted-custom: #7a7770;
+  --color-text: #1a1a18;
 
   /* shadcn mappings */
   --color-sidebar-ring: var(--sidebar-ring);
@@ -62,38 +62,38 @@
 }
 
 :root {
-  --background: #0c0c0b;
-  --foreground: #e8e6e1;
-  --card: #141413;
-  --card-foreground: #e8e6e1;
-  --popover: #141413;
-  --popover-foreground: #e8e6e1;
-  --primary: #3d6b4f;
-  --primary-foreground: #e8e6e1;
-  --secondary: #141413;
-  --secondary-foreground: #e8e6e1;
-  --muted: #141413;
-  --muted-foreground: #6b6a65;
-  --accent: #c8b87a;
-  --accent-foreground: #0c0c0b;
+  --background: #faf8f4;
+  --foreground: #1a1a18;
+  --card: #f5f2ec;
+  --card-foreground: #1a1a18;
+  --popover: #f5f2ec;
+  --popover-foreground: #1a1a18;
+  --primary: #4a8c65;
+  --primary-foreground: #faf8f4;
+  --secondary: #f0ede6;
+  --secondary-foreground: #1a1a18;
+  --muted: #f0ede6;
+  --muted-foreground: #7a7770;
+  --accent: #a89340;
+  --accent-foreground: #1a1a18;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: #232320;
-  --input: #232320;
-  --ring: #3d6b4f;
-  --chart-1: #3d6b4f;
-  --chart-2: #c8b87a;
-  --chart-3: #6b6a65;
+  --border: #ddd8ce;
+  --input: #ddd8ce;
+  --ring: #4a8c65;
+  --chart-1: #4a8c65;
+  --chart-2: #a89340;
+  --chart-3: #7a7770;
   --chart-4: #2e5040;
-  --chart-5: #e8e6e1;
+  --chart-5: #1a1a18;
   --radius: 0.125rem;
-  --sidebar: #141413;
-  --sidebar-foreground: #e8e6e1;
-  --sidebar-primary: #3d6b4f;
-  --sidebar-primary-foreground: #e8e6e1;
-  --sidebar-accent: #232320;
-  --sidebar-accent-foreground: #e8e6e1;
-  --sidebar-border: #232320;
-  --sidebar-ring: #3d6b4f;
+  --sidebar: #f5f2ec;
+  --sidebar-foreground: #1a1a18;
+  --sidebar-primary: #4a8c65;
+  --sidebar-primary-foreground: #faf8f4;
+  --sidebar-accent: #e8e4dc;
+  --sidebar-accent-foreground: #1a1a18;
+  --sidebar-border: #ddd8ce;
+  --sidebar-ring: #4a8c65;
 }
 
 @layer base {
@@ -115,8 +115,8 @@ body::before {
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
   pointer-events: none;
-  z-index: 100;
-  opacity: 0.6;
+  z-index: 1;
+  opacity: 0.25;
 }
 
 /* Animations */
@@ -153,4 +153,14 @@ body::before {
 
 .animate-pulse-dot {
   animation: pulse-dot 2s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-slide,
+  .animate-pulse-dot {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }

@@ -8,7 +8,8 @@ const tools: Tool[] = [
     status: "live",
     appUrl: "https://geo.pinelab.ai",
     articleUrl: null,
-    githubUrl: "https://github.com/benmoskoff/pinelab-geo",
+    githubUrl: "https://github.com/bmoski8/pinelab-geo",
+    videoUrl: null,
   },
   {
     number: "02",
@@ -17,7 +18,8 @@ const tools: Tool[] = [
     status: "coming-soon",
     appUrl: "https://builder.pinelab.ai",
     articleUrl: null,
-    githubUrl: "https://github.com/benmoskoff/pinelab-sitebuilder",
+    githubUrl: "https://github.com/bmoski8/pinelab-sitebuilder",
+    videoUrl: null,
   },
   {
     number: "03",
@@ -26,7 +28,18 @@ const tools: Tool[] = [
     status: "coming-soon",
     appUrl: "https://qa.pinelab.ai",
     articleUrl: null,
-    githubUrl: "https://github.com/benmoskoff/pinelab-slackqa",
+    githubUrl: "https://github.com/bmoski8/pinelab-slackqa",
+    videoUrl: "https://www.loom.com/embed/9e014c80a3034c6791b3074586860cf1",
+  },
+  {
+    number: "04",
+    name: "Investor Portal",
+    desc: "A clean portal for sharing updates, decks, and data rooms with investors. Built because email threads are where investor relationships go to die.",
+    status: "coming-soon",
+    appUrl: "https://investors.pinelab.ai",
+    articleUrl: null,
+    githubUrl: "https://github.com/bmoski8/pinelab-investor-portal",
+    videoUrl: "https://www.loom.com/embed/90743ee296c84784813c3dc1fc814f56",
   },
 ];
 
@@ -34,44 +47,44 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="min-h-screen flex flex-col justify-center px-10 pt-[120px] pb-20 max-w-[900px] relative max-md:px-6 max-md:pt-[100px] max-md:pb-[60px]">
+      <section className="min-h-screen flex flex-col items-center justify-center px-10 pt-[120px] pb-20 max-w-[900px] mx-auto relative text-center max-md:px-6 max-md:pt-[100px] max-md:pb-[60px]">
         <div className="text-[11px] tracking-[0.14em] uppercase text-pine mb-8 flex items-center gap-2.5 animate-fade-up">
           <span className="inline-block w-6 h-px bg-pine" />
           Building in public
+          <span className="inline-block w-6 h-px bg-pine" />
         </div>
 
-        <h1 className="font-serif text-foreground leading-none tracking-tight mb-9 text-[clamp(52px,8vw,96px)] animate-fade-up [animation-delay:0.1s]">
-          Tools I built
+        <h1 className="leading-tight tracking-tight mb-9 text-[clamp(36px,5.5vw,64px)] animate-fade-up [animation-delay:0.1s]">
+          <span className="font-mono font-light text-foreground tracking-[-0.02em]">Tools I built</span>
           <br />
-          while building
+          <span className="font-mono font-light text-foreground tracking-[-0.02em]">while building</span>
           <br />
-          <em className="italic text-gold">PineChat.</em>
+          <em className="font-mono not-italic font-medium text-pine tracking-[0.03em]">PineChat.</em>
         </h1>
 
-        <p className="text-base text-muted-foreground max-w-[480px] leading-loose mb-12 animate-fade-up [animation-delay:0.2s]">
+        <p className="text-base text-muted-foreground max-w-[480px] leading-loose mb-10 animate-fade-up [animation-delay:0.2s]">
           I&apos;m a <strong className="text-foreground font-medium">non-technical founder</strong> learning
           to build with AI. These are the tools I made along the way. Open
           source. Free to use. Built with Claude Code.
         </p>
 
-        <div className="inline-flex items-center gap-2 text-[11px] text-muted-foreground tracking-wide border border-border px-4 py-2 rounded-sm animate-fade-up [animation-delay:0.35s]">
+        <a
+          href="#tools"
+          className="text-pine text-sm tracking-wide no-underline hover:text-pine-soft transition-colors mb-10 animate-fade-up [animation-delay:0.3s]"
+        >
+          See the tools &darr;
+        </a>
+
+        <div className="inline-flex items-center gap-2 text-[11px] text-muted-foreground tracking-wide border border-border bg-surface/50 px-4 py-2 rounded-sm animate-fade-up [animation-delay:0.4s]">
           <span className="text-pine text-[10px]">&#9672;</span>
           Built with Claude Code &nbsp;&middot;&nbsp; Vibe coded
           &nbsp;&middot;&nbsp; Use at your own risk
-        </div>
-
-        {/* Scroll cue */}
-        <div className="absolute bottom-10 left-10 flex items-center gap-3 text-muted-foreground text-[11px] tracking-widest uppercase max-md:left-6">
-          <div className="w-10 h-px bg-border relative overflow-hidden">
-            <div className="absolute top-0 left-[-100%] w-full h-full bg-pine animate-slide" />
-          </div>
-          The tools
         </div>
       </section>
 
       {/* Tool Grid */}
       <section
-        className="px-10 pt-20 pb-[120px] max-w-[1100px] max-md:px-6 max-md:pt-[60px] max-md:pb-20"
+        className="px-10 pt-20 pb-[120px] max-w-[1100px] mx-auto max-md:px-6 max-md:pt-[60px] max-md:pb-20"
         id="tools"
       >
         <div className="flex items-baseline justify-between mb-12 border-b border-border pb-5">
@@ -97,7 +110,7 @@ export default function Home() {
 
       {/* About */}
       <section
-        className="border-t border-border px-10 py-16 grid grid-cols-2 gap-20 max-w-[1100px] max-md:grid-cols-1 max-md:gap-10 max-md:px-6 max-md:py-12"
+        className="border-t border-border px-10 py-16 grid grid-cols-2 gap-20 max-w-[1100px] mx-auto max-md:grid-cols-1 max-md:gap-10 max-md:px-6 max-md:py-12"
         id="about"
       >
         <div>
