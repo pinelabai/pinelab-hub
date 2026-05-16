@@ -9,7 +9,7 @@ const tools: Tool[] = [
     appUrl: "https://geo.pinelab.ai",
     articleUrl: null,
     githubUrl: "https://github.com/bmoski8/pinelab-geo",
-    videoUrl: null,
+    videoUrl: "https://www.loom.com/embed/24dab3c8034a4a0aa99353a31bb42fcc",
   },
   {
     number: "02",
